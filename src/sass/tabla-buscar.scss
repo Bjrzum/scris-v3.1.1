@@ -12,6 +12,10 @@
     }
 }
 
+.link__excel {
+    @extend .btn-mas;
+}
+
 .buscar-mas {
 
     display: none;

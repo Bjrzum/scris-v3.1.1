@@ -32,6 +32,7 @@ date_default_timezone_set('America/Bogota');
 
         <?php include 'css/tabla.css';
         include 'css/tabla-buscar.css';
+        include 'css/tabla-emergent.css';
         ?>
     </style>
 </head>
@@ -55,10 +56,11 @@ date_default_timezone_set('America/Bogota');
             <a href="cerrar.php" class="link__nav">Cerrar Sesión</a>
         </nav>
     </header>
+
     <section class="section">
         <div class="header2">
             <div class="generar__excel">
-                <a href="generar_excel.php" class="link__excel">Generar Reporte</a>
+                <button class="link__excel">Generar Reporte</button>
                 <button class="btn-mas"><i class="bi bi-caret-down-fill"></i></button>
                 <button class="search10">
                     <i class="bi bi-arrow-repeat"></i>
@@ -153,6 +155,82 @@ date_default_timezone_set('America/Bogota');
                 </table>
             <?php } ?>
         </div>
+    </section>
+    <section class="section-emergent">
+        <div class="emergent-container">
+            <div class="emergent-content">
+                <div class="emergent-head">
+                    <p class="emergent-info">
+                        Reporte generado correctamente
+                    </p>
+                </div>
+                <div class="emergent-body">
+                    <div class="emergent-btn">
+                        <button class="emergent-btn-cancel">
+                            Cancelar
+                        </button>
+                        <button class="emergent-btn-download">
+                            Descargar
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="emergent-load">
+                <div class="animation">
+                    <div class="lds-ellipsis">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="text">
+                    <p>
+                        Generando reporte
+                    </p>
+                </div>
+            </div>
+        </div>
+        <script>
+            $('.link__excel').click(function() {
+                $('.section-emergent').addClass('section-emergent-active');
+                fecha = new Date();
+                year = fecha.getFullYear();
+                month = fecha.getMonth() + 1;
+                day = fecha.getDate();
+                if (month < 10) {
+                    month = '0' + month;
+                }
+                if (day < 10) {
+                    day = '0' + day;
+                }
+                fecha = year + '/' + month + '/' + day;
+                $.ajax({
+                    url: 'generar_excel.php',
+                    type: 'POST',
+                    data: {
+                        fecha: fecha
+                    },
+                    success: function(data) {
+                        if (data == '1') {
+                            $('.emergent-load').hide(200);
+                            $('.emergent-content').show(200);
+                        } else {
+                            $('.emergent-load').hide(200);
+                            $('.emergent-content').html('<div class="emergent-head"><p class="emergent-info">Error al generar el reporte</p></div><div class="emergent-body"><div class="emergent-btn"><button class="emergent-btn-cancel">Cancelar</button></div></div>');
+                        }
+                    }
+                });
+            });
+
+            $('.emergent-btn-cancel').click(function() {
+                $('.section-emergent').removeClass('section-emergent-active');
+            });
+            $('.emergent-btn-download').click(function() {
+                $('.section-emergent').removeClass('section-emergent-active');
+                window.location.href = 'enviar/funcionarios.xlsx';
+            });
+        </script>
     </section>
     <footer class="footer">
         <p>&copy; 2022 - SCRIS | Todos los derechos reservados</p>

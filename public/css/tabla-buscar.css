@@ -1,4 +1,4 @@
-.btn-mas, .search10, .btn-cancel, .buscar-mas button {
+.btn-mas, .search10, .btn-cancel, .buscar-mas button, .link__excel {
   display: inline-block;
   padding: 0.5em;
   background-color: #008000;
@@ -6,7 +6,7 @@
   border-radius: 5px;
   color: #fff;
 }
-.btn-mas:hover, .search10:hover, .btn-cancel:hover, .buscar-mas button:hover {
+.btn-mas:hover, .search10:hover, .btn-cancel:hover, .buscar-mas button:hover, .link__excel:hover {
   background-color: #006100;
   cursor: pointer;
 }
