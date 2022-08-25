@@ -1,0 +1,120 @@
+.section2 {
+    padding: 0em;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0%;
+    height: 0%;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 9999;
+    transition: background-color 0.5s;
+    overflow: hidden;
+
+    h1 {
+        text-align: center;
+        color: #fff;
+        display: inline-block;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .flex {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        form {
+            margin-top: 1em;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 500px;
+            height: 100%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 1);
+
+            .form-group {
+
+                margin-bottom: 10px;
+                display: inline-block;
+                width: 100%;
+                text-align: center;
+
+                label {
+                    display: inline-block;
+                    width: 100%;
+                    border: none;
+                    outline: none;
+                    text-align: left;
+
+                }
+
+                input,
+                select,
+                textarea {
+                    display: inline-block;
+                    width: 100%;
+                    border: none;
+                    outline: none;
+                    background-color: #acc;
+                }
+
+                textarea {
+                    height: 100px;
+                    resize: none;
+                }
+
+                input,
+                select {
+                    padding: .5em;
+                }
+            }
+
+            .span {
+                display: inline-block;
+                padding: 1em;
+                width: 40%;
+                text-align: center;
+                border: 1px solid #333;
+                margin: .3em;
+                color: #fff;
+                font-weight: 500;
+                text-transform: uppercase;
+
+                &:hover {
+                    background-color: #acc;
+                    cursor: pointer;
+                    color: #000;
+                }
+            }
+
+            .btn-modificar {
+                background-color: #a00;
+            }
+
+            .btn-cancelar {
+                background-color: #0a0;
+            }
+        }
+    }
+}
+
+.section2--active {
+    padding: 1em;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 1);
+    z-index: 9999;
+    transition: background-color 0.5s;
+    overflow: auto;
+}

@@ -1,0 +1,147 @@
+.flex {
+    display: flex;
+    width: 100%;
+    height: auto;
+    min-height: calc(100vh - 250px);
+    justify-content: center;
+    padding: 1em;
+    padding-top: 2em;
+    flex-wrap: wrap;
+    //align-items: center;
+
+    a,
+    button {
+        width: 300px;
+        display: flex;
+        height: 60px;
+        justify-content: center;
+        align-items: center;
+        margin: .5em;
+        background-color: #00752d;
+        border: 1px solid #fff;
+        text-decoration: none;
+        color: #fff;
+        padding: 1em;
+        text-align: center;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #005e24;
+            color: #fff;
+        }
+    }
+}
+
+.administrador {
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: none;
+}
+
+.administrador--active {
+    display: flex;
+}
+
+.cont_adm {
+    width: 0%;
+    height: 0%;
+    border-radius: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0em;
+    overflow: hidden;
+    transition: all 1s;
+
+    .admin {
+        background-color: #fff;
+        width: 100%;
+        max-width: 500px;
+        padding: 1em;
+        border-radius: 5px;
+        box-shadow: 0 0 5px #000;
+
+        .advertencia {
+            background-color: #ffff0096;
+            padding: .5em;
+
+            h2 {
+                color: #f00;
+                font-size: 1.2em;
+                text-align: center;
+            }
+
+            p {
+                margin-top: .3em;
+                text-align: justify;
+            }
+        }
+
+        .contrasena {
+            margin-top: 1em;
+
+            .inputs {
+                display: flex;
+                width: 100%;
+                align-items: center;
+                flex-direction: column;
+
+                .entries {
+
+                    input {
+                        display: inline-block;
+                        outline: none;
+                        border: #555 solid 1px;
+                        padding: .5em;
+                    }
+
+                    input:focus {
+                        border: #000 solid 2px;
+                    }
+                }
+
+                .op {
+                    margin-top: .3em;
+
+                    input,
+                    button {
+                        display: inline-block;
+                        outline: none;
+                        border: #555 solid 1px;
+                        padding: .5em;
+                        color: #fff;
+                        cursor: pointer;
+
+                        &:hover {
+                            background-color: #555;
+                            color: #fff;
+                        }
+                    }
+
+                    input {
+                        background-color: #48e;
+                    }
+
+                    button {
+                        background-color: #0a0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.cont_adm--open {
+    width: 100%;
+    height: 100%;
+    border-radius: 0%;
+    padding: 1em;
+}

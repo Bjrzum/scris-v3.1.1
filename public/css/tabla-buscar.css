@@ -1,0 +1,45 @@
+.btn-mas, .search10, .btn-cancel, .buscar-mas button {
+  display: inline-block;
+  padding: 0.5em;
+  background-color: #008000;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  color: #fff;
+}
+.btn-mas:hover, .search10:hover, .btn-cancel:hover, .buscar-mas button:hover {
+  background-color: #006100;
+  cursor: pointer;
+}
+
+.buscar-mas {
+  display: none;
+}
+.buscar-mas input {
+  display: inline-block;
+  padding: 0.3em;
+  margin: 0.2em;
+}
+.buscar-mas button {
+  padding: 0.3em;
+}
+
+.t-margin {
+  margin-top: 5em;
+}
+
+#top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000000;
+  display: none;
+  padding: 0.5em;
+  background-color: #008000;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  color: #fff;
+}
+#top:hover {
+  background-color: #006100;
+  cursor: pointer;
+}

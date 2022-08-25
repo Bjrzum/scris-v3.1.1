@@ -1,0 +1,171 @@
+@charset "UTF-8";
+.header2 {
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  padding: 0.5em;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+.header2 .generar__excel a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1em;
+  padding: 0.5em 1em;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  background-color: #00a65a;
+  transition: all 0.3s ease;
+  border: 1px solid #013808;
+}
+.header2 .generar__excel a:hover {
+  background-color: #00500a;
+  color: #fff;
+}
+.header2 .administrar__tabla {
+  display: flex;
+}
+.header2 .administrar__tabla button {
+  color: #fff;
+  font-size: 1em;
+  padding: 0.5em 1em;
+  border: 1px solid #013808;
+  border-radius: 5px;
+  background-color: #00a65a;
+  transition: all 0.3s ease;
+  margin-left: 0.5em;
+}
+.header2 .administrar__tabla button:hover {
+  background-color: #00500a;
+  color: #fff;
+  border: 1px solid #013808;
+  cursor: pointer;
+}
+
+.status-2,
+.status-3,
+.status-4 {
+  background-color: #fff000 !important;
+}
+
+.btn-eliminar-true {
+  background-color: #ff0000 !important;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-family: "Calibri", sans-serif;
+  font-size: 10px;
+  color: #000;
+  background: #fff;
+  text-align: center;
+  margin: auto;
+  font-weight: 600 !important;
+  width: 100%;
+  padding: 1em;
+}
+table thead {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 12px;
+}
+table thead tr {
+  background: #C65911;
+  color: #fff;
+  font-weight: bold;
+}
+table thead th {
+  padding: 1.2em;
+}
+table thead .fec {
+  width: 100px;
+}
+table thead .nom {
+  width: 300px;
+}
+table thead .dep {
+  width: 200px;
+}
+table thead .dir {
+  width: 200px;
+}
+table thead .asig {
+  width: 300px;
+}
+table thead .hor {
+  width: 100px;
+}
+table thead .hor2 {
+  width: 100px;
+}
+table thead .pla {
+  width: 100px;
+}
+table thead .obs {
+  width: 400px;
+}
+table th,
+table td {
+  border: 1px solid #000;
+  padding: 0.5em;
+}
+table tbody .DIRECTIVO {
+  background-color: #00B0F0;
+}
+table tbody .DOCENTE {
+  background-color: #BDD7EE;
+}
+table tbody .SERVICIOS {
+  background-color: #C6E0B4;
+}
+table tbody .FUNCIONARIO {
+  background-color: #FFE699;
+}
+table tbody .MENSAJERÍA {
+  background-color: #8780cc;
+}
+table tbody .EXTERNO {
+  background-color: #eeeeee;
+}
+table tbody .SEGURIDAD {
+  background-color: #aaaaaa;
+}
+table tbody .ADMINISTRATIVO {
+  background-color: #00B050;
+}
+table tbody .tr-novedad {
+  background-color: #333 !important;
+  color: #fff !important;
+}
+table tbody .tr-eliminar {
+  background-color: rgba(170, 0, 0, 0.6666666667) !important;
+  color: #fff !important;
+}
+table tbody .tr-novedad-true {
+  background-color: #e5ff00 !important;
+}
+table tbody textarea {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: #000;
+  text-align: center;
+  resize: none;
+}
+table tbody tr textarea {
+  font-weight: 600;
+  font-size: 10px;
+}
+table tbody tr .hora__novedad textarea {
+  color: #ff0000 !important;
+}
+
+.section {
+  padding: 0;
+  background-color: #fff;
+}

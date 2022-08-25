@@ -1,0 +1,92 @@
+.emergent {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 0;
+  transition: height 0.3s ease-in-out;
+}
+.emergent .container__emerget {
+  display: inline-block;
+  background-color: #fff;
+  padding: 1em;
+  border-radius: 15px;
+}
+.emergent .container__emerget .title {
+  text-align: center;
+}
+.emergent .container__emerget .title .msm {
+  font-size: 1.2em;
+}
+.emergent .container__emerget .title .msm1 {
+  text-transform: uppercase;
+  color: #f00;
+  padding: 1em;
+  font-weight: bold;
+}
+.emergent .container__emerget .title .msm2 {
+  font-size: 1em;
+  color: #000;
+}
+.emergent .container__emerget .title #nombre-funcionario {
+  color: #f00;
+  font-weight: bold;
+  margin-top: 0.5em;
+  font-size: 1.2em;
+}
+.emergent .container__emerget .cuerpo {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  margin-top: 1em;
+}
+.emergent .container__emerget .cuerpo input {
+  display: inline-block;
+  width: 100%;
+  padding: 0.5em;
+}
+.emergent .container__emerget .errores {
+  padding: 1em;
+  color: #f00;
+}
+.emergent .container__emerget .accion {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1em;
+}
+.emergent .container__emerget .accion button {
+  display: inline-block;
+  width: 50%;
+  padding: 0.5em;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #fff;
+  text-transform: uppercase;
+}
+.emergent .container__emerget .accion #btn-delete {
+  background-color: #f00;
+}
+.emergent .container__emerget .accion #btn-delete:hover {
+  background-color: #a00;
+}
+.emergent .container__emerget .accion #btn-cancel {
+  background-color: #02960e;
+}
+.emergent .container__emerget .accion #btn-cancel:hover {
+  background-color: #00770e;
+}
+
+.emergent-active {
+  padding: 1em;
+  height: 100%;
+}
