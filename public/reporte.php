@@ -71,7 +71,7 @@ if (isset($_GET['sql'])) {
 
     while ($fecha_inicio_ajax <= $fecha_fin_ajax) {
 
-        $sql = $sql_ajax . " fecha = '" . $fecha_inicio_ajax . "'" . $sql2_ajax . " AND  status != 4 ORDER BY hora_ingreso";
+        $sql = $sql_ajax . " fecha = '" . $fecha_inicio_ajax . "' " . $sql2_ajax . " AND  status != 4 ORDER BY hora_ingreso";
         $result = $conexion->query($sql);
         $bool = false;
 
@@ -293,130 +293,130 @@ if (isset($_GET['sql'])) {
         REGISTROS
     </title>
     <style>
-    .download {
-        display: inline-block;
-        position: fixed;
-        right: 1em;
-        top: 1em;
-        border: 1px solid #fff;
-        background-color: #070;
-        color: #fff;
-        padding: 0.5em 1em;
-        border-radius: 3px;
-        font-family: Calibri, sans-serif !important;
-        font-weight: bold;
-        text-transform: uppercase;
-        text-decoration: none;
-    }
+        .download {
+            display: inline-block;
+            position: fixed;
+            right: 1em;
+            top: 1em;
+            border: 1px solid #fff;
+            background-color: #070;
+            color: #fff;
+            padding: 0.5em 1em;
+            border-radius: 3px;
+            font-family: Calibri, sans-serif !important;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
 
-    .download:hover {
-        background-color: #fff;
-        color: #070;
-    }
+        .download:hover {
+            background-color: #fff;
+            color: #070;
+        }
 
-    table {
-        font-family: Calibri, sans-serif !important;
-        font-size: 14px;
-        font-weight: bold;
-        text-align: center !important;
-        padding: .5em;
-        border-collapse: collapse;
-        width: 100%;
-        margin-bottom: 4em;
+        table {
+            font-family: Calibri, sans-serif !important;
+            font-size: 14px;
+            font-weight: bold;
+            text-align: center !important;
+            padding: .5em;
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 4em;
 
-    }
+        }
 
-    .llegada_tarde,
-    .salida_tarde {
-        color: #ff0000 !important;
-    }
+        .llegada_tarde,
+        .salida_tarde {
+            color: #ff0000 !important;
+        }
 
-    .novedad {
-        background-color: #ff0 !important;
-    }
+        .novedad {
+            background-color: #ff0 !important;
+        }
 
-    thead {
-        background-color: #C65911 !important;
-        font-size: 16px;
-    }
+        thead {
+            background-color: #C65911 !important;
+            font-size: 16px;
+        }
 
-    th {
-        padding-top: 1em;
-        padding-bottom: 1em;
-    }
+        th {
+            padding-top: 1em;
+            padding-bottom: 1em;
+        }
 
-    th,
-    td {
-        border: 1px solid #000;
-    }
+        th,
+        td {
+            border: 1px solid #000;
+        }
 
-    .docente {
-        background-color: #BDD7EE;
-    }
+        .docente {
+            background-color: #BDD7EE;
+        }
 
-    .administrativo {
-        background-color: #00B050;
-    }
+        .administrativo {
+            background-color: #00B050;
+        }
 
-    .directivo {
-        background-color: #00B0F0;
-    }
+        .directivo {
+            background-color: #00B0F0;
+        }
 
-    .funcionario_cafeteria {
-        background-color: #FFE699;
-    }
+        .funcionario_cafeteria {
+            background-color: #FFE699;
+        }
 
-    .mensajeria {
-        background-color: #87c;
-    }
+        .mensajeria {
+            background-color: #87c;
+        }
 
-    .servicios_generales {
-        background-color: #C6E0B4;
-    }
+        .servicios_generales {
+            background-color: #C6E0B4;
+        }
 
-    .seguridad {
-        background-color: #aaa;
-    }
+        .seguridad {
+            background-color: #aaa;
+        }
 
-    .funcionario_externo {
-        background-color: #eee;
-    }
+        .funcionario_externo {
+            background-color: #eee;
+        }
 
-    #date {
-        width: 75px !important;
-    }
+        #date {
+            width: 75px !important;
+        }
 
-    #name {
-        width: 200px !important;
-    }
+        #name {
+            width: 200px !important;
+        }
 
-    #dependency {
-        width: 160px !important;
-    }
+        #dependency {
+            width: 160px !important;
+        }
 
-    #address {
-        width: 200px !important;
-    }
+        #address {
+            width: 200px !important;
+        }
 
-    #asig {
-        width: 200px !important;
-    }
+        #asig {
+            width: 200px !important;
+        }
 
-    #hour {
-        width: 75px !important;
-    }
+        #hour {
+            width: 75px !important;
+        }
 
-    #hour2 {
-        width: 75px !important;
-    }
+        #hour2 {
+            width: 75px !important;
+        }
 
-    #auto {
-        width: 75px !important;
-    }
+        #auto {
+            width: 75px !important;
+        }
 
-    #obj {
-        width: auto;
-    }
+        #obj {
+            width: auto;
+        }
     </style>
 </head>
 
@@ -433,42 +433,46 @@ if (isset($_GET['sql'])) {
     ?>
 
     <script>
-    <?php
+        <?php
         if (isset($_GET['sql'])) {
             $sql = $_GET['sql'];
             $sql2 = $_GET['sql2'];
+            //echo $sql2;
             $fecha_inicio = $_GET['fecha_inicio'];
             $fecha_fin = $_GET['fecha_fin'];
 
             echo "var sql = '" . $sql . "';";
-            echo "var sql2 = '" . $sql2 . "';";
+            //echo "var sql2 = '" . $sql2 . "';";
+            echo 'var sql2 = "' . $sql2 . '";';
             echo "var fecha_inicio = '" . $fecha_inicio . "';";
             echo "var fecha_fin = '" . $fecha_fin . "';";
 
         ?>
 
-    $(document).ready(function() {
-        $.ajax({
-            url: "reporteExcel.php",
-            type: "POST",
-            data: {
-                sql: sql,
-                sql2: sql2,
-                fecha_inicio: fecha_inicio,
-                fecha_fin: fecha_fin
-            },
-            success: function(data) {
-                console.log(data);
-                if (data == "ok") {
-                    $("#post-result").html("<a href='<?php $ruta = 'reportes/reporte.xlsx';
-                                                                echo $ruta; ?>' class='download'>Descargar</a>");
-                }
-            }
-        });
-    });
+
+            $(document).ready(function() {
+                $.ajax({
+                    url: "reporteExcel.php",
+                    type: "POST",
+                    data: {
+                        sql: sql,
+                        sql2: sql2,
+                        fecha_inicio: fecha_inicio,
+                        fecha_fin: fecha_fin
+                    },
+                    success: function(data) {
+                        console.log(data);
+                        if (data == "ok") {
+                            $("#post-result").html("<a href='reportes/reporte.xlsx' class='download'>Descargar</a>");
+                        }
 
 
-    <?php
+                    }
+                });
+            });
+
+
+        <?php
             //$fecha_inicio = date('Y/m/d', strtotime($fecha_inicio));
         }
         ?>

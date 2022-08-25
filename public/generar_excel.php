@@ -202,7 +202,7 @@ while ($fila = $resultado->fetch()) {
     $sheet->getStyle('A' . $n . ':I' . $n)->getAlignment()->setWrapText(true);
     $sheet->getStyle('A' . $n . ':I' . $n)->applyFromArray($stylesArray);
 
-/*---- bloque de codigo modificado
+    /*---- bloque de codigo modificado
 
     if ($dependencia == "DIRECTIVO") {
         $sheet->getStyle('A' . $n . ':I' . $n)->applyFromArray($stylesArrayDirectivo);
@@ -222,13 +222,13 @@ while ($fila = $resultado->fetch()) {
         $sheet->getStyle('A' . $n . ':I' . $n)->applyFromArray($stylesArraySeguridad);
     }
     */
-    
+
     /*nuevo bloque de código*/
     if ($dependencia == "DOCENTE" || $dependencia != "DOCENTE") {
         $sheet->getStyle('A' . $n . ':I' . $n)->applyFromArray($stylesArrayDocente);
     }
-    
-    
+
+
 
     if ($status == '4') {
 
@@ -399,98 +399,99 @@ $writer->save('enviar/funcionarios.xlsx');
     <title>Enviar Reporte</title>
 
     <style>
-    * {
-        font-family: 'Arial';
-        box-sizing: border-box;
-        padding: 0;
-        margin: 0;
-    }
+        * {
+            font-family: 'Arial';
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
 
-    body {
-        width: 100%;
-        height: 100%;
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+        body {
+            width: 100%;
+            height: 100%;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
 
-    form {
-        width: 100%;
-        max-width: 500px;
-        margin: auto;
-        padding: 20px;
-    }
+        form {
+            width: 100%;
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+        }
 
-    p {
-        background-color: #ffd500aa;
-        color: #ff5500;
-        text-align: center;
-        padding: 10px;
-        margin: 10px;
-        font-size: 20px;
-        font-weight: bold;
-    }
+        p {
+            background-color: #ffd500aa;
+            color: #ff5500;
+            text-align: center;
+            padding: 10px;
+            margin: 10px;
+            font-size: 20px;
+            font-weight: bold;
+        }
 
-    .respuestas {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+        .respuestas {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-    input {
-        padding: 10px;
-        margin: 10px;
-        border: 1px solid #ff5500;
-        border-radius: 5px;
-        color: #fff;
-        font-size: 1em;
-        font-weight: bold;
-        cursor: pointer;
-        background-color: #a00000;
-        display: inline-block;
-        width: 100px;
-        text-align: center;
+        input {
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ff5500;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: #a00000;
+            display: inline-block;
+            width: 100px;
+            text-align: center;
 
-    }
+        }
 
-    input:hover {
-        background-color: #ff5500;
-    }
+        input:hover {
+            background-color: #ff5500;
+        }
 
-    a {
-        padding: 10px;
-        margin: 10px;
-        text-decoration: none;
-        color: #fff;
-        font-size: 1em;
-        font-weight: bold;
-        cursor: pointer;
-        background-color: #00aa00;
-        border: 1px solid #006600;
-        display: inline-block;
-        border-radius: 5px;
-        width: 100px;
-        text-align: center;
-    }
+        a {
+            padding: 10px;
+            margin: 10px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            background-color: #00aa00;
+            border: 1px solid #006600;
+            display: inline-block;
+            border-radius: 5px;
+            width: 100px;
+            text-align: center;
+        }
 
-    a:hover {
-        background-color: #48e;
-    }
+        a:hover {
+            background-color: #48e;
+        }
     </style>
 </head>
 
 <body>
 
-    <form action="enviar.php" method="post">
+    <!-- <form action="enviar.php" method="post"> -->
+    <form>
         <p class="info">
-            ¿Seguro que deseas enviar el reporte?
+            Reporte generado correctamente!
         </p>
         <div class="respuestas">
-            <input type="submit" value="Enviar" name="enviar">
+            <!-- <input type="submit" value="Enviar" name="enviar"> -->
             <a href="tabla.php">Cancelar</a>
-            <a href="enviar/funcionarios.xlsx">Descargar</a>
+            <a href="enviar/funcionarios.xlsx">Guardar</a>
         </div>
     </form>
 

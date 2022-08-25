@@ -58,7 +58,7 @@ date_default_timezone_set('America/Bogota');
     <section class="section">
         <div class="header2">
             <div class="generar__excel">
-                <a href="generar_excel.php" class="link__excel">Enviar Reporte</a>
+                <a href="generar_excel.php" class="link__excel">Generar Reporte</a>
                 <button class="btn-mas"><i class="bi bi-caret-down-fill"></i></button>
                 <button class="search10">
                     <i class="bi bi-arrow-repeat"></i>

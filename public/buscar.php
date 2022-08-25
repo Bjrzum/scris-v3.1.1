@@ -36,25 +36,25 @@ $conexion = conectar($ruta);
     <script src="js/library/jquery/dist/jquery.min.js"></script>
     <title>SCRIS | Buscar</title>
     <style>
-    .footer p {
-        text-align: center;
-        padding: 1em;
-        color: #fffa;
-    }
+        .footer p {
+            text-align: center;
+            padding: 1em;
+            color: #fffa;
+        }
 
-    #descargar {
-        text-decoration: none;
-    }
+        #descargar {
+            text-decoration: none;
+        }
 
-    #no_doata {
-        text-align: center;
-        padding: 1em;
-        color: #fffa;
-        font-weight: bold;
-    }
+        #no_doata {
+            text-align: center;
+            padding: 1em;
+            color: #fffa;
+            font-weight: bold;
+        }
 
-    <?php include "css/buscar.css";
-    ?>
+        <?php include "css/buscar.css";
+        ?>
     </style>
 </head>
 
@@ -200,97 +200,98 @@ $conexion = conectar($ruta);
         <p>&copy; 2022 - SCRIS | Todos los derechos reservados</p>
     </footer>
     <script>
-    var arrayFuncionarios = [];
-    $('.btn__funcionario').click(function() {
+        var arrayFuncionarios = [];
+        $('.btn__funcionario').click(function() {
 
-        var contenedor = $('.filtros_seleccionados');
-        var nombre = $(this).text();
-        contenedor.append('<span class="nombre_funcionario">' + nombre + '</span>');
-        arrayFuncionarios.push(nombre);
-        $(this).hide();
-        var resultado = $('.resultado');
-        resultado.html('');
+            var contenedor = $('.filtros_seleccionados');
+            var nombre = $(this).text();
+            contenedor.append('<span class="nombre_funcionario">' + nombre + '</span>');
+            arrayFuncionarios.push(nombre);
+            $(this).hide();
+            var resultado = $('.resultado');
+            resultado.html('');
 
-    });
+        });
 
-    $('.btn-buscar').click(function() {
+        $('.btn-buscar').click(function() {
 
-        //_fecha = 2022-07-07 pasar a fecha = 2022/07/07  a/m/d  
-        function FechaJS(_fecha) {
-            var fecha = _fecha.split("-");
-            var fecha_js = fecha[0] + "/" + fecha[1] + "/" + fecha[2];
-            return fecha_js;
-        }
-
-        var funcionarios = arrayFuncionarios;
-        var fecha_inicio = $('#fecha_inicio').val(); //busqueda principal
-        var fecha_fin = $('#fecha_fin').val(); //busqueda principal
-
-        var error = $('.error__information');
-
-        if (fecha_fin == "") {
-            fecha_fin = fecha_inicio;
-        }
-
-        if (fecha_inicio == "") {
-            error.html(
-                "<p style='color:red; text-aling:center; background:#fff; padding:1em;max-width:500px; margin:auto;'>Debe ingresar una fecha de inicio</p>"
-            );
-        } else if (fecha_inicio > fecha_fin) {
-            error.html(
-                "<p style='color:red; text-aling:center; background:#fff; padding:1em;max-width:500px; margin:auto;'>La fecha de inicio no puede ser mayor a la fecha fin</p>"
-            );
-        } else {
-
-
-
-            fecha_inicio = FechaJS(fecha_inicio);
-            fecha_fin = FechaJS(fecha_fin);
-
-            var sql = "SELECT * FROM tabla WHERE ";
-            var sql2 = "";
-
-
-            if (funcionarios.length > 0) {
-                sql2 += " AND nombre IN ('" + funcionarios.join("','") + "')";
+            //_fecha = 2022-07-07 pasar a fecha = 2022/07/07  a/m/d  
+            function FechaJS(_fecha) {
+                var fecha = _fecha.split("-");
+                var fecha_js = fecha[0] + "/" + fecha[1] + "/" + fecha[2];
+                return fecha_js;
             }
 
-            //MANDAR A las pagina reporte con post
-            window.location.href = "reporte.php?fecha_inicio=" + fecha_inicio + "&fecha_fin=" + fecha_fin +
-                "&sql=" + sql + "&sql2=" + sql2;
+            var funcionarios = arrayFuncionarios;
+            var fecha_inicio = $('#fecha_inicio').val(); //busqueda principal
+            var fecha_fin = $('#fecha_fin').val(); //busqueda principal
+
+            var error = $('.error__information');
+
+            if (fecha_fin == "") {
+                fecha_fin = fecha_inicio;
+            }
+
+            if (fecha_inicio == "") {
+                error.html(
+                    "<p style='color:red; text-aling:center; background:#fff; padding:1em;max-width:500px; margin:auto;'>Debe ingresar una fecha de inicio</p>"
+                );
+            } else if (fecha_inicio > fecha_fin) {
+                error.html(
+                    "<p style='color:red; text-aling:center; background:#fff; padding:1em;max-width:500px; margin:auto;'>La fecha de inicio no puede ser mayor a la fecha fin</p>"
+                );
+            } else {
 
 
-        }
-    });
 
-    $('.subtitle1').click(function() {
-        $('.container1').slideToggle();
-        $('.subtitle1').addClass('cont');
-        $('.subtitle2').removeClass('cont');
-        $('.subtitle3').removeClass('cont');
-        $('.subtitle4').removeClass('cont');
-    });
-    $('.subtitle2').click(function() {
-        $('.container2').slideToggle();
-        $('.subtitle2').addClass('cont');
-        $('.subtitle1').removeClass('cont');
-        $('.subtitle3').removeClass('cont');
-        $('.subtitle4').removeClass('cont');
-    });
-    $('.subtitle3').click(function() {
-        $('.container3').slideToggle();
-        $('.subtitle3').addClass('cont');
-        $('.subtitle1').removeClass('cont');
-        $('.subtitle2').removeClass('cont');
-        $('.subtitle4').removeClass('cont');
-    });
-    $('.subtitle4').click(function() {
-        $('.container4').slideToggle();
-        $('.subtitle4').addClass('cont');
-        $('.subtitle1').removeClass('cont');
-        $('.subtitle2').removeClass('cont');
-        $('.subtitle3').removeClass('cont');
-    });
+                fecha_inicio = FechaJS(fecha_inicio);
+                fecha_fin = FechaJS(fecha_fin);
+
+                var sql = "SELECT * FROM tabla WHERE ";
+                var sql2 = "";
+
+
+                if (funcionarios.length > 0) {
+                    sql2 += " AND nombre IN ('" + funcionarios.join("','") + "')";
+                    alert(sql2);
+                }
+
+                //MANDAR A las pagina reporte con post
+                window.location.href = "reporte.php?fecha_inicio=" + fecha_inicio + "&fecha_fin=" + fecha_fin +
+                    "&sql=" + sql + "&sql2=" + sql2;
+
+
+            }
+        });
+
+        $('.subtitle1').click(function() {
+            $('.container1').slideToggle();
+            $('.subtitle1').addClass('cont');
+            $('.subtitle2').removeClass('cont');
+            $('.subtitle3').removeClass('cont');
+            $('.subtitle4').removeClass('cont');
+        });
+        $('.subtitle2').click(function() {
+            $('.container2').slideToggle();
+            $('.subtitle2').addClass('cont');
+            $('.subtitle1').removeClass('cont');
+            $('.subtitle3').removeClass('cont');
+            $('.subtitle4').removeClass('cont');
+        });
+        $('.subtitle3').click(function() {
+            $('.container3').slideToggle();
+            $('.subtitle3').addClass('cont');
+            $('.subtitle1').removeClass('cont');
+            $('.subtitle2').removeClass('cont');
+            $('.subtitle4').removeClass('cont');
+        });
+        $('.subtitle4').click(function() {
+            $('.container4').slideToggle();
+            $('.subtitle4').addClass('cont');
+            $('.subtitle1').removeClass('cont');
+            $('.subtitle2').removeClass('cont');
+            $('.subtitle3').removeClass('cont');
+        });
     </script>
 
 </body>
